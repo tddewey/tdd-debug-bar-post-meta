@@ -12,7 +12,7 @@ GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="http://plugins.svn.wordpress.org/tdd-progress-bar" # Remote SVN repo on wordpress.org, with no trailing slash
+SVNURL="http://plugins.svn.wordpress.org/tdd-debug-bar-post-meta" # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="taylorde" # your svn username
 
 
