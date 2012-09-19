@@ -37,12 +37,15 @@ class TDD_Debug_Bar_Post_Meta extends Debug_Bar_Panel {
 					<tr>
 						<td>
 							<strong><?php echo $key ?></strong><br>
-							<small><?php $keycount = count( $key );
-								echo $keycount == 1 ? $keycount . ' value' : $keycount . ' values'; ?>
+							<small><?php $valuecount = count( $value );
+								echo $valuecount == 1 ? $valuecount . ' value' : $valuecount . ' values'; ?>
 							</small>
 						</td>
 						<td>
-							<?php var_dump($value); ?>
+							<?php
+							// Could just echo $value, but this way we are sure it mimics how a dev will use it.
+							var_dump( get_post_meta( $post->ID, $key ) );
+							?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
