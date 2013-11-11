@@ -11,7 +11,7 @@ Plugin structure taken from Debug Bar Cron, a fine plugin by Zack Tollman and He
 */
 
 /**
- * Adds panel, as defined in the included class, to Debug Bar.
+ * Adds panel, as defined in the included class, to Debug Bar. Only on a singular view.
  *
  * @param $panels array
  * @return array
@@ -19,7 +19,9 @@ Plugin structure taken from Debug Bar Cron, a fine plugin by Zack Tollman and He
 function tdd_dbpm_debug_bar_panels( $panels ) {
 	if ( ! class_exists( 'TDD_Debug_Bar_Post_Meta' ) ) {
 		include ( 'class-debug-bar-post-meta.php' );
-		$panels[] = new TDD_Debug_Bar_Post_Meta();
+		if ( is_singular() ) {
+			$panels[] = new TDD_Debug_Bar_Post_Meta();
+		}
 	}
 	return $panels;
 }
